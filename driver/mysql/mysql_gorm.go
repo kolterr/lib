@@ -23,7 +23,7 @@ func NewGorm(c *Config) (db *gorm.DB) {
 	}
 	db.SingularTable(true)
 	db.BlockGlobalUpdate(true)
-	db.DB().SetMaxIdleConns(c.MaxIdleConns)
-	db.DB().SetMaxOpenConns(c.MaxOpenConns)
+	db.DB().SetMaxIdleConns(c.MaxIdleConn)
+	db.DB().SetMaxOpenConns(c.MaxOpenConn)
 	return
 }
