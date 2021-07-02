@@ -12,7 +12,7 @@ type Config struct {
 	Debug       bool
 }
 
-func NewMySQL(c *Config) (db *gorm.DB) {
+func NewGorm(c *Config) (db *gorm.DB) {
 	var err error
 	db, err = gorm.Open("mysql", c.DSN)
 	if c.Debug == true {
