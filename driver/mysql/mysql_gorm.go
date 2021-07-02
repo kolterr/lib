@@ -15,9 +15,7 @@ type Config struct {
 func NewGorm(c *Config) (db *gorm.DB) {
 	var err error
 	db, err = gorm.Open("mysql", c.DSN)
-	if c.Debug == true {
-		db.LogMode(true)
-	}
+	db.LogMode(c.Debug)
 	if err != nil {
 		panic(err)
 	}
